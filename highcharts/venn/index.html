@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="https://static.jianshukeji.com/hcode/images/favicon.ico">
+    <style>
+        /* css 代码  */
+    </style>
+    <script src="highcharts.js"></script>
+    <script src="modules/exporting.js"></script>
+    <script src="modules/oldie.js"></script>
+    <script src="modules/venn.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    var a=10;
+    var b=5;
+    var c=a-b;
+    Highcharts.chart('container', {
+        series: [{
+            type: 'venn',
+            name: '都是',
+            data: [{
+                sets: ['需求'],
+                value: a,
+                color:"#34ff99"
+            }, {
+                sets: ['數據'],
+                value: b,
+                color:"#ff9b99"
+            }, {
+                sets: ['需求', '數據'],
+                value: 1,
+                name: '匹配',
+                color:"#ff5372"
+            }]
+        }],
+        title: {
+            text: '大手大腳黑客技術'
+        }
+    });
+
+</script>
+</body>
+</html>
